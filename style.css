@@ -14,8 +14,8 @@ html {
 
 /* 1. The Global Background */
 body { 
-    background-color: #ebd7c9; 
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  background-image: url("img/download.jpg");
+    /* background-color: #ebd7c9;  */
     margin: 0;
     padding: 0;
 }
