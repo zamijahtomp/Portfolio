@@ -8,20 +8,14 @@
   - If you change the background color of your webpage, you may need to update this rule too.
 ***/
 html {
-    background-image: url("img/download.jpg");
+    /* This creates a smooth fade between your theme colors */
+    background: linear-gradient(180deg, #ebd7c9 0%, #d2b48c 100%);
+    background-attachment: fixed; /* Keeps the gradient smooth as you scroll */
     
-    /* 1. This keeps the image from stretching like crazy */
-    background-size: contain; 
-    
-    /* 2. This allows it to repeat vertically so the page isn't empty at the bottom */
-    background-repeat: repeat; 
-    
-    /* 3. Keep the attachment fixed if you want the "parallax" look, 
-       or remove it if you want the background to scroll with the text */
-    background-attachment: scroll; 
-    
-    background-color: var(--bg-color);
     font-family: Oswald;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
 }
 
 /* 1. The Global Background */
