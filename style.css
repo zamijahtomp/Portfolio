@@ -8,15 +8,18 @@
   - If you change the background color of your webpage, you may need to update this rule too.
 ***/
 html {
-  /* 1. Move the image HERE from the body */
     background-image: url("img/download.jpg");
     
-    /* 2. Add these rules to make the image fit the screen properly */
-    background-size: cover;          /* Makes it stretch to fill the window */
-    background-position: center;     /* Centers the cute pattern */
-    background-attachment: fixed;   /* Optional: The image stays put while you scroll */
+    /* 1. This keeps the image from stretching like crazy */
+    background-size: contain; 
     
-    /* 3. This original color becomes the "failover" if the image breaks */
+    /* 2. This allows it to repeat vertically so the page isn't empty at the bottom */
+    background-repeat: repeat; 
+    
+    /* 3. Keep the attachment fixed if you want the "parallax" look, 
+       or remove it if you want the background to scroll with the text */
+    background-attachment: scroll; 
+    
     background-color: var(--bg-color);
     font-family: Oswald;
 }
