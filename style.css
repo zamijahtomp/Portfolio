@@ -9,7 +9,7 @@
 ***/
 html {
     /* This creates a smooth fade between your theme colors */
-    background: linear-gradient(180deg, #ebd7c9 0%, #d2b48c 100%);
+    background: linear-gradient(180deg, var(--bg-color) 0%, var(--bg-color-body) 100%);
     background-attachment: fixed; /* Keeps the gradient smooth as you scroll */
     
     font-family: Oswald;
