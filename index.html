@@ -215,16 +215,21 @@
     </footer>
 
     <script>
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-        });
-    });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Restart animation when it comes into view
+                    entry.target.classList.add('show-animation');
+                } else {
+                    // Remove the class when it leaves so it can "disappear" or reset
+                    entry.target.classList.remove('show-animation');
+                }
+            });
+        }, { threshold: 0.1 }); // Fires when 10% of the container is visible
 
-    // This tells the script to look for anything with the 'reveal' class
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+        // Tell the observer which elements to watch
+        const hiddenElements = document.querySelectorAll('.reveal-container');
+        hiddenElements.forEach((el) => observer.observe(el));
     </script>
 </body>
 </html>
