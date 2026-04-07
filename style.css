@@ -8,13 +8,21 @@
   - If you change the background color of your webpage, you may need to update this rule too.
 ***/
 html {
+  /* 1. Move the image HERE from the body */
+    background-image: url("img/download.jpg");
+    
+    /* 2. Add these rules to make the image fit the screen properly */
+    background-size: cover;          /* Makes it stretch to fill the window */
+    background-position: center;     /* Centers the cute pattern */
+    background-attachment: fixed;   /* Optional: The image stays put while you scroll */
+    
+    /* 3. This original color becomes the "failover" if the image breaks */
     background-color: var(--bg-color);
     font-family: Oswald;
 }
 
 /* 1. The Global Background */
 body { 
-  background-image: url("img/download.jpg");
     /* background-color: #ebd7c9;  */
     margin: 0;
     padding: 0;
