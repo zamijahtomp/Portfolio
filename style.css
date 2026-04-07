@@ -1,0 +1,724 @@
+/*** VSCodeEDU preview fix 
+
+  Purpose:
+  - Fix VSCodeEDU issue that causes a white border to show around
+    the preview window
+
+  When To Modify:
+  - If you change the background color of your webpage, you may need to update this rule too.
+***/
+html {
+    background-color: var(--bg-color);
+    font-family: Oswald;
+}
+
+/* 1. The Global Background */
+body { 
+    background-color: #ebd7c9; 
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    margin: 0;
+    padding: 0;
+}
+
+
+/*** Navigation bar (navbar) ***
+  
+  Purpose:
+  - Add style rules for your website's navbar
+
+  When To Modify:
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+/* This makes the list horizontal and spreads them out */
+.nav-list {
+    display: flex; /* Makes the list a row instead of a stack */
+    justify-content: space-around; /* Spreads items out evenly */
+    align-items: center; /* Centers them vertically */
+    list-style-type: none; /* Removes the bullet points */
+    background-color: var(--bg-color-body); /* Dark background like your current bar */
+    padding: 30px 0;
+    margin: 0;
+}
+
+/* Styling the links */
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+/* Making the title bigger and bolder in the center */
+.nav-title a {
+    font-size: 24px !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* CONTACT SECTION */
+
+.contact {
+    position: relative; /* This is the "anchor" for the image */
+    padding: 60px 10px; /* Give the header more height to breathe */
+}
+
+.contact-text {
+  color: white;
+    text-align: center; /* Keeps your name and info dead-center */
+    width: 100%;
+    font-size: 20px;
+}
+
+.contact-text a{
+  color: white;
+    text-align: center; /* Keeps your name and info dead-center */
+    width: 100%;
+    font-size: 20px;
+}
+
+.profile-photo {
+    position: absolute;  /* Moves it out of the center flow */
+    top: 20px;           /* Distance from the top of the header */
+    right: 40px;         /* Distance from the right edge */
+    width: 220px;        /* Your preferred size */
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #b7a395;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* On smaller screens, move it back to the center so it doesn't overlap text */
+@media (max-width: 850px) {
+    .profile-photo {
+        position: static; /* Puts it back in the normal layout */
+        margin: 0 auto 20px auto; /* Centers it above the title */
+        display: block;
+    }
+}
+
+/* Ensure the white bubble (content-box) handles the image well */
+.reflection-container {
+  color: white;
+  text-align: center;
+    overflow: hidden; /* Keeps everything inside the rounded corners */
+    padding: 50px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    /* letter-spacing: 1px; */
+}
+
+.reflection-container p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.questions-container {
+    overflow: hidden; /* Keeps everything inside the rounded corners */
+    padding: 50px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 900px;
+    color: white;
+}
+
+.questions-container li {
+  font-size: 20px;
+  padding: 10px 0px;
+}
+
+.goals-container {
+    color: white;
+  text-align: center;
+    overflow: hidden; /* Keeps everything inside the rounded corners */
+    padding: 50px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin: 80px auto;
+    max-width: 900px;
+}
+
+.goals-container p {
+  font-size: 20px;
+}
+
+.people-container {
+    color: white;
+    overflow: hidden; /* Keeps everything inside the rounded corners */
+    padding: 50px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin: 80px auto;
+    max-width: 900px;
+}
+
+.people-container li {
+  font-size: 20px;
+}
+
+.projects-container {
+    padding: 50px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin: 40px auto;
+    max-width: 900px;
+    color: white;
+}
+
+.project-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes gaps between borders */
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.project-table th {
+    background-color: #333; /* Darker header to stand out */
+    padding: 15px;
+    text-align: left;
+    border-bottom: 3px solid #ce1126; /* Using your red accent color */
+}
+
+.project-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle highlight on hover */
+}
+
+.project-table a {
+    color: #ebd7c9; /* Light accent for links */
+    text-decoration: underline;
+}
+
+/* ROADMAP SECTION */
+.roadmap-container {
+  color: white;
+  overflow: hidden; /* Keeps everything inside the rounded corners */
+    padding: 30px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.roadmap {
+    border-left: 4px solid #ce1126;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.howard-container {
+  color: white;
+  text-align: center;
+    overflow: hidden; /* Keeps everything inside the rounded corners */
+    padding: 50px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin: 80px auto;
+    max-width: 900px;
+}
+
+.howard-container p {
+  font-size: 20px;
+}
+
+.crochet-container {
+  color: white;
+  text-align: center;
+    overflow: hidden; /* Keeps everything inside the rounded corners */
+    padding: 50px;
+    background: var(--bg-color-body);
+    border-radius: 15px;
+    margin: 80px auto;
+    max-width: 900px;
+}
+
+.crochet-container p {
+  font-size: 20px;
+}
+
+.crochet-gallery {
+    display: flex;             /* This aligns them side-by-side */
+    justify-content: center;   /* Centers the group of images */
+    gap: 20px;                 /* Adds space between the pictures */
+    flex-wrap: wrap;           /* Allows them to stack on mobile phones */
+    margin-top: 30px;
+}
+
+.crochet-gallery img {
+    width: 30%;                /* Slightly bigger than 25% to fill the space better */
+    height: auto;              /* Important: This prevents the images from stretching */
+    border-radius: 10px;       /* Gives the photos nice rounded corners to match your theme */
+    object-fit: cover;         /* Ensures the images look good even if they are different sizes */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adds a subtle depth */
+}
+
+/* 5. Styling the Timeline */
+/* .reflection {
+    border-left: 4px solid #ce1126;
+    padding-left: 20px;
+    margin-top: 20px;
+} */
+
+/* ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+ul li {
+  float: right;
+}
+
+ul li1 {
+  float: center;
+}
+
+ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #111111;
+} */
+
+
+/* Targeting the image specifically within your history section */
+.reflection img {
+    display: block;        /* Necessary for centering with margin auto */
+    margin: 20px auto;     /* Adds space above/below and centers it */
+    width: 60%;            /* Adjust this percentage to make it smaller or larger */
+    max-width: 500px;      /* Prevents it from getting too huge on big screens */
+    height: auto;          /* Maintains the original aspect ratio */
+    border-radius: 10px;   /* Softens the edges to match your theme */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adds a subtle lift */
+}
+
+.image-gallery {
+    display: flex;          /* The magic 'row' command */
+    justify-content: center; /* Centers the whole gallery */
+    gap: 20px;              /* Adds a nice 20px space between the images */
+    margin-top: 20px;
+    flex-wrap: wrap;        /* Logic: if the screen is too small (phone), they will stack nicely */
+}
+
+.image-gallery img {
+    width: 45%;             /* Each image takes up almost half the width */
+    max-width: 400px;       /* Safety cap so they don't get too huge */
+    height: auto;           /* Keeps them from looking 'squished' */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/*RESUME SECTION*/
+
+.resume-container {
+    border-left: 4px solid #ce1126;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.resume-container img {
+    display: block;        /* Necessary for centering with margin auto */
+    margin: 20px auto;     /* Adds space above/below and centers it */
+    width: 60%;            /* Adjust this percentage to make it smaller or larger */
+    max-width: 500px;      /* Prevents it from getting too huge on big screens */
+    height: auto;          /* Maintains the original aspect ratio */
+    border-radius: 10px;   /* Softens the edges to match your theme */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Adds a subtle lift */
+}
+
+
+/*** Text ***
+  
+  Purpose: 
+  - Add style rules for headings (h1-6),
+    paragraphs (p), links (a), and buttons
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+h4 {
+  font-style: italic;
+}
+
+a,
+a * {
+    font-style: bold;
+}
+
+a.block:link article {
+  color: #9f643d
+}
+
+a.block:visited article {
+  color: #1f0e02;
+}
+
+a.block:hover article{
+  background-color: #f8bbd0;
+}
+
+a.block:active article {
+  background-color: #e55a8b;
+}
+
+.header-button {
+    /* Example Style, replace with your own! */
+    background-color: black;    /* button color */
+    color: white;               /* text color */
+    border: none;               /* hides the default border */
+    padding: 5px 12px;          /* space between button's text and edge */
+    border-radius: 10px;         /* curved edges instead of square */
+    cursor: pointer;            /* makes the cursor change when over button */
+    transition-duration: .20s;
+    /* text-align: center; */
+    margin: 50px 100px;
+    font-size: 20pt;
+    font-family: Oswald;
+}
+
+.header-button:hover {
+    /* Make the button look different when the user hovers over it */
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgb(41, 41, 41);
+}
+
+.header-item:nth-of-type(1) {
+    display: flex;        /* The parent holds the children in a row */
+    flex-direction: row;
+    color: white;
+}
+
+.header-item:nth-of-type(3) {
+    display: flex;        /* The parent holds the children in a row */
+    flex-direction: row;
+    color: white;
+}
+
+.main-header-block {
+    background-color: #007A33; /* Matches your catchphrase green */
+    border-bottom-left-radius: 40px;  /* Adjust the roundness here */
+    border-bottom-right-radius: 40px;
+    overflow: hidden; /* This is CRITICAL: it clips the sharp corners of the internal divs */
+    width: 100%;
+}
+
+/* Ensure no gaps between the pieces */
+.navbar ul, 
+.header-container, 
+#catchphrase {
+    margin: 0;
+    padding: 0; 
+    border-radius: 0; /* Clear any old rounding on the internal parts */
+}
+
+#catchphrase {
+    /* Keep the padding so the buttons aren't touching the edge */
+    padding-bottom: 20px; 
+}
+
+section#catchphrase button {
+  background-color: var(--bg-color-body);
+  font-family: Oswald;
+  font-size: 11pt;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0px 10px;
+  transition-duration: .20s;
+}
+
+section#catchphrase button:hover {
+  cursor: pointer;
+  background-color: #015122;
+  font-family: Oswald;
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin: 0px 10px;
+}
+/*** header ***
+  
+  Purpose:
+  - Add style rules for your website's header section
+
+  When To Modify:
+  - [X] Project 3 (REQUIRED FEATURE) 
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+.header-container {
+    display: flex;
+    justify-content: center; /* Horizontal center */
+    align-items: center;     /* Vertical center */
+    flex-wrap: wrap; /* Allows items to drop to the next line */
+    background-color: black;
+    width: 100%;
+    padding: 30px 0;
+}
+
+/* This makes your header beautiful on phones */
+@media (max-width: 600px) {
+    .main-header-block {
+        flex-direction: column; 
+        padding: 20px;
+    }
+    
+    .navbar ul {
+        flex-direction: column; /* Stacks links vertically */
+        gap: 10px;
+        padding: 0;
+    }
+
+    /* Makes the video container responsive so it doesn't cut off */
+    iframe {
+        width: 100% !important;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+#header-img {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between the fist and the text */
+}
+
+#header-img h1 {
+    margin: 0;
+    color: white;
+    justify-content: center;
+}
+
+#header-img img {
+  width: 80px;
+  height: auto;
+  margin: 0; /* Remove the 'auto' margin if using flex centering */
+}
+
+
+/*** footer ***
+  
+  Purpose:
+  - Add style rules for your website's footer section
+
+  When To Modify:
+  - [ ] Project 3 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+.footer {
+    background-color: #b7a395;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 10pt;
+    text-align: center; /* Centers the links */
+    padding: 5px 0;    /* Adds space so it's not a thin line */
+}
+
+.footer a {
+    margin: 0 5px;   
+    color: #231942;    /* Uses dark text color variable */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/*** About Section ***
+  
+  Purpose:
+  - Add style rules for your website's About section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Schedule Section ***
+  
+  Purpose:
+  - Add style rules for your website's Schedule section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** Links Section ***
+  
+  Purpose:
+  - Add style rules for your website's Links section
+
+  When To Modify:
+  - [ ] Project 3 (OPTIONAL)
+  - [ ] Project 4 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+
+/*** RSVP [PLACEHOLDER] [ADDED IN UNIT 6] ***/
+/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
+/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+/*** Dark Mode [ADDED IN UNIT 5] ***/
+/* Add style to button */
+#theme-button {
+
+}
+
+
+/* Customize Dark Mode Theme */
+.dark-mode {
+  background-color: #542712;
+  color:#716055
+}
+
+/* Example: Different dark mode style for h1 */
+.dark-mode h1 {
+    
+}
+
+.dark-mode #catchphrase {
+  background-color: #015122;
+  padding-top: 1px;
+}
+
+.dark-mode #catchphrase button{
+  background-color: #015122;
+}
+/* Example: Different dark mode style for visited links */
+.dark-mode a:visited * {
+
+}
+
+/*** Custom Colors (OPTIONAL) ***
+  
+  Purpose:
+  - Use CSS variables to define custom colors for your website
+  - To get you started, we've provided the color scheme used in our example site.
+  - To reference a color variable in your css, use var(--variable-name) in place of a color value
+
+  When To Modify:
+  - [ ] Any time (OPTIONAL)
+***/
+
+:root {
+    /* Light Mode */
+    --bg-color: #ebd7c9;
+    --bg-color-body: #a78e7c;
+    --text-color: #231942;
+
+    /* Dark Mode */
+    --bg-color-dark-mode: #3e3377;
+    --text-color-dark-mode: #fff;
+
+    /* Accent Colors */
+    --accent-color-light: #d2cff5;
+    --accent-color-medium: #684fb5;
+    --accent-color-dark: #482f95;
+    --accent-color-darkest: #231942;
+    --accent-color-green: #28eb76;
+
+    /* Error Colors */
+    --error-color: #f8bbd0;
+    --error-color-border: #e63946;
+}
+
+
+
+.expection-container {
+    background-color: rgba(230, 224, 204, 0.959);
+    padding: 10px 10px;
+    border-radius: 20px;
+    /* Put space around the edges of the webpage */
+    margin: 10px 25px;
+}
+
+.schedule-container {
+    background-color: rgba(230, 224, 204, 0.959);
+    padding: 10px 10px;
+    border-radius: 20px;
+    /* Put space around the edges of the webpage */
+    margin: 10px 25px;
+}
+
+.link-container {
+    background-color:#cea589;
+    padding: 10px 10px;
+    border-radius: 20px;
+    /* Put space around the edges of the webpage */
+    margin: 10px 25px;
+}
+
+
+.iframe-container {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  /* align-items: center;     Centers vertically */
+  height: 250px;           /*vh = Takes full viewport height for vertical centering example */
+  width: 100%;
+}
+
+.iframe-container iframe {
+  width: 500px;  /* This makes the video fill 100% of the 50% container */
+  height: 100%; /* This makes the video fill the 250px height you set */
+  border: none; /* Optional: removes the default border around videos */
+}
+
+
+
+img { 
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
